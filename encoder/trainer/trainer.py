@@ -51,6 +51,8 @@ class Trainer(object):
         for _, tem in tqdm(enumerate(train_dataloader), desc='Training Recommender', total=len(train_dataloader)):
             self.optimizer.zero_grad()
             batch_data = list(map(lambda x: x.long().to(configs['device']), tem))
+            #if _ == 0:  # 或者 _ == 0 只打印一个
+            #    print("Batch data:", batch_data)
             loss, loss_dict = model.cal_loss(batch_data)
             ep_loss += loss.item()
             loss.backward()

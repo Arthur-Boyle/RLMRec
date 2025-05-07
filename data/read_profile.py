@@ -1,7 +1,7 @@
 import pickle
 import numpy as np
 
-with open('data/amazon/usr_prf.pkl', 'rb') as f:
+with open('amazon/usr_prf.pkl', 'rb') as f:
     prf = pickle.load(f)
 
 user_index = np.random.choice(a=len(prf), size=1)[0]

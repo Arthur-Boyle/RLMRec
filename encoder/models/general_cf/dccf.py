@@ -22,13 +22,26 @@ class DCCF(BaseModel):
         new_rows = np.concatenate([rows, cols + self.user_num], axis=0)
         new_cols = np.concatenate([cols + self.user_num, rows], axis=0)
         plain_adj = sp.coo_matrix((np.ones(len(new_rows)), (new_rows, new_cols)), shape=[self.user_num + self.item_num, self.user_num + self.item_num]).tocsr().tocoo()
-        self.all_h_list = list(plain_adj.row)
-        self.all_t_list = list(plain_adj.col)
+        # 强制转换 plain_adj.row 与 plain_adj.col 为 np.int64
+        rows_int64 = plain_adj.row.astype(np.int64)
+        cols_int64 = plain_adj.col.astype(np.int64)
+
         self.A_in_shape = plain_adj.shape
-        self.A_indices = torch.tensor([self.all_h_list, self.all_t_list], dtype=torch.long).cuda()
-        self.D_indices = torch.tensor([list(range(self.user_num + self.item_num)), list(range(self.user_num + self.item_num))], dtype=torch.long).cuda()
-        self.all_h_list = torch.LongTensor(self.all_h_list).cuda()
-        self.all_t_list = torch.LongTensor(self.all_t_list).cuda()
+
+    # 直接从 NumPy 数组转换到 Tensor，并指定数据类型为 torch.long（int64）
+        self.all_h_list = torch.tensor(rows_int64, dtype=torch.long, device='cuda')
+        self.all_t_list = torch.tensor(cols_int64, dtype=torch.long, device='cuda')
+
+        
+
+    # 用 torch.stack 拼接索引
+        self.A_indices = torch.stack([self.all_h_list, self.all_t_list], dim=0).cuda()
+
+        self.D_indices = torch.tensor(
+            [list(range(self.user_num + self.item_num)), list(range(self.user_num + self.item_num))],
+            dtype=torch.long, device='cuda'
+        )
+
         self.G_indices, self.G_values = self._cal_sparse_adj()
 
         # hyper-parameter
@@ -56,7 +69,7 @@ class DCCF(BaseModel):
 
     def _cal_sparse_adj(self):
         A_values = torch.ones(size=(len(self.all_h_list), 1)).view(-1).cuda()
-        A_tensor = torch_sparse.SparseTensor(row=self.all_h_list, col=self.all_t_list, value=A_values, sparse_sizes=self.A_in_shape).cuda()
+        A_tensor = torch_sparse.SparseTensor(row=self.all_h_list, col=self.all_t_list, value=A_values, sparse_sizes=self.A_in_shape,trust_data=True).cuda()
         D_values = A_tensor.sum(dim=1).pow(-0.5)
         G_indices, G_values = torch_sparse.spspmm(self.D_indices, D_values, self.A_indices, A_values, self.A_in_shape[0], self.A_in_shape[1], self.A_in_shape[1])
         G_indices, G_values = torch_sparse.spspmm(G_indices, G_values, self.D_indices, D_values, self.A_in_shape[0], self.A_in_shape[1], self.A_in_shape[1])

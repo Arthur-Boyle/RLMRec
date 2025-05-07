@@ -1,0 +1,84 @@
+optimizer:
+  name: adam
+  lr: 1.0e-3
+  weight_decay: 0
+
+train:
+  epoch: 3000
+  batch_size: 4096
+  save_model: false
+  loss: pairwise
+  test_step: 3
+  reproducible: true
+  seed: 2023
+  patience: 5
+
+test:
+  metrics: [recall, ndcg]
+  k: [5, 10, 20]
+  batch_size: 1024
+
+data:
+  type: general_cf
+  name: amazon
+
+model:
+  name: xsimgcl_kmean
+  
+  # general parameters here
+  keep_rate: 1.0
+  embedding_size: 64 #原32
+
+  # dataset-specific hyper-parameter here
+  layer_num: 3
+  layer_cl: 2
+  reg_weight: 1.0e-5
+  cl_weight: 1.0e-1
+  temperature: 0.15 #原0.2
+  eps: 0.9
+
+  # for amazon
+  amazon:
+    layer_num: 3
+    layer_cl: 2
+    reg_weight: 1.0e-5
+    cl_weight: 1.0e-1
+    temperature: 0.15 #原0.2
+    eps: 0.2
+    proto_reg: 8e-8                 # (float) The prototype-contrastive weight.
+    num_clusters: 300              # (int) Number of prototypes.
+    m_step: 1                       # (int) Number of M-steps for each E-step.
+    warm_up_step: 20                # (int) Number of warm up steps.
+    ssl_temp: 0.1                   # (float) Temperature for contrastive loss.
+    ssl_reg: 1e-7                   # (float) The structure-contrastive loss weight.
+    embedding_size: 64
+  # for yelp
+  yelp:
+    layer_num: 3
+    layer_cl: 2
+    reg_weight: 1.0e-5
+    cl_weight: 1.0e-1
+    temperature: 0.2
+    eps: 0.9
+    proto_reg: 8e-8                 # (float) The prototype-contrastive weight.
+    num_clusters: 300              # (int) Number of prototypes.
+    m_step: 1                       # (int) Number of M-steps for each E-step.
+    warm_up_step: 20                # (int) Number of warm up steps.
+    ssl_temp: 0.1                   # (float) Temperature for contrastive loss.
+    ssl_reg: 1e-7                   # (float) The structure-contrastive loss weight.
+    embedding_size: 64
+  # for steam
+  steam:
+    layer_num: 3
+    layer_cl: 2
+    reg_weight: 1.0e-5
+    cl_weight: 1.0e-1
+    temperature: 0.5
+    eps: 0.2
+    proto_reg: 8e-8                 # (float) The prototype-contrastive weight.
+    num_clusters: 120              # (int) Number of prototypes.
+    m_step: 1                       # (int) Number of M-steps for each E-step.
+    warm_up_step: 20                # (int) Number of warm up steps.
+    ssl_temp: 0.1                   # (float) Temperature for contrastive loss.
+    ssl_reg: 1e-7                   # (float) The structure-contrastive loss weight.
+    embedding_size: 64

@@ -25,20 +25,20 @@ data:
 model:
   name: dccf
   # general parameters here
-  embedding_size: 32
+  embedding_size: 64 #原32
   intent_num: 128
 
   # data-specific parameters here
   layer_num: 2
   reg_weight: 1.0e-4
   cl_weight: 1.0e-3
-  temperature: 0.1
+  temperature: 0.15 #原0.1
   # for amazon
   amazon:
     layer_num: 2
     reg_weight: 1.0e-4
     cl_weight: 1.0e-3
-    temperature: 0.1
+    temperature: 0.15
   # for yelp
   yelp:
     layer_num: 2
@@ -50,4 +50,4 @@ model:
     layer_num: 3
     reg_weight: 1.0e-3
     cl_weight: 1.0e-3
-    temperature: 0.1
+    temperature: 0.15

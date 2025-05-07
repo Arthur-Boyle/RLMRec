@@ -58,7 +58,7 @@ class LightGCN(BaseModel):
 
     def full_predict(self, batch_data):
         user_embeds, item_embeds = self.forward(self.adj, 1.0)
-        self.is_training = False
+        self.is_training = False #下面取验证和测试的bacth_data
         pck_users, train_mask = batch_data
         pck_users = pck_users.long()
         pck_user_embeds = user_embeds[pck_users]

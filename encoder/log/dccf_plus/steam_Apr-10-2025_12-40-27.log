@@ -1,0 +1,22 @@
+2025-04-10 12:40:27,878 - {'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'steam', 'user_num': 23310, 'item_num': 5237}, 'model': {'name': 'dccf_plus', 'embedding_size': 32, 'intent_num': 128, 'layer_num': 2, 'reg_weight': 0.0001, 'cl_weight': 0.001, 'cl_temperature': 0.1, 'kd_weight': 0.01, 'kd_temperature': 0.5, 'amazon': {'layer_num': 2, 'reg_weight': 0.0001, 'cl_weight': 0.001, 'cl_temperature': 0.1, 'kd_weight': 0.01, 'kd_temperature': 0.5}, 'yelp': {'layer_num': 2, 'reg_weight': 0.0001, 'cl_weight': 0.001, 'cl_temperature': 0.1, 'kd_weight': 0.01, 'kd_temperature': 0.2}, 'steam': {'layer_num': 3, 'reg_weight': 0.001, 'cl_weight': 0.001, 'cl_temperature': 0.1, 'kd_weight': 0.01, 'kd_temperature': 0.5}}}
+2025-04-10 12:40:40,065 - Epoch   0 Validation set [recall@5: 0.0514 recall@10: 0.0835 recall@20: 0.1307 ] [ndcg@5: 0.0581 ndcg@10: 0.0681 ndcg@20: 0.0840 ] 
+2025-04-10 12:41:07,473 - Epoch   3 Validation set [recall@5: 0.0540 recall@10: 0.0876 recall@20: 0.1381 ] [ndcg@5: 0.0596 ndcg@10: 0.0706 ndcg@20: 0.0877 ] 
+2025-04-10 12:41:34,889 - Epoch   6 Validation set [recall@5: 0.0570 recall@10: 0.0924 recall@20: 0.1435 ] [ndcg@5: 0.0632 ndcg@10: 0.0749 ndcg@20: 0.0922 ] 
+2025-04-10 12:42:02,991 - Epoch   9 Validation set [recall@5: 0.0575 recall@10: 0.0931 recall@20: 0.1439 ] [ndcg@5: 0.0640 ndcg@10: 0.0755 ndcg@20: 0.0927 ] 
+2025-04-10 12:42:30,238 - Epoch  12 Validation set [recall@5: 0.0562 recall@10: 0.0938 recall@20: 0.1446 ] [ndcg@5: 0.0626 ndcg@10: 0.0753 ndcg@20: 0.0926 ] 
+2025-04-10 12:42:57,858 - Epoch  15 Validation set [recall@5: 0.0567 recall@10: 0.0918 recall@20: 0.1425 ] [ndcg@5: 0.0618 ndcg@10: 0.0735 ndcg@20: 0.0907 ] 
+2025-04-10 12:43:25,520 - Epoch  18 Validation set [recall@5: 0.0585 recall@10: 0.0945 recall@20: 0.1476 ] [ndcg@5: 0.0643 ndcg@10: 0.0763 ndcg@20: 0.0943 ] 
+2025-04-10 12:43:52,896 - Epoch  21 Validation set [recall@5: 0.0572 recall@10: 0.0939 recall@20: 0.1461 ] [ndcg@5: 0.0636 ndcg@10: 0.0756 ndcg@20: 0.0934 ] 
+2025-04-10 12:44:20,284 - Epoch  24 Validation set [recall@5: 0.0571 recall@10: 0.0927 recall@20: 0.1464 ] [ndcg@5: 0.0627 ndcg@10: 0.0744 ndcg@20: 0.0928 ] 
+2025-04-10 12:44:47,760 - Epoch  27 Validation set [recall@5: 0.0565 recall@10: 0.0929 recall@20: 0.1430 ] [ndcg@5: 0.0622 ndcg@10: 0.0743 ndcg@20: 0.0913 ] 
+2025-04-10 12:45:15,407 - Epoch  30 Validation set [recall@5: 0.0584 recall@10: 0.0941 recall@20: 0.1477 ] [ndcg@5: 0.0645 ndcg@10: 0.0760 ndcg@20: 0.0944 ] 
+2025-04-10 12:45:43,534 - Epoch  33 Validation set [recall@5: 0.0569 recall@10: 0.0927 recall@20: 0.1451 ] [ndcg@5: 0.0625 ndcg@10: 0.0745 ndcg@20: 0.0923 ] 
+2025-04-10 12:46:10,901 - Epoch  36 Validation set [recall@5: 0.0579 recall@10: 0.0931 recall@20: 0.1438 ] [ndcg@5: 0.0638 ndcg@10: 0.0754 ndcg@20: 0.0925 ] 
+2025-04-10 12:46:38,364 - Epoch  39 Validation set [recall@5: 0.0583 recall@10: 0.0935 recall@20: 0.1470 ] [ndcg@5: 0.0640 ndcg@10: 0.0754 ndcg@20: 0.0933 ] 
+2025-04-10 12:47:05,659 - Epoch  42 Validation set [recall@5: 0.0573 recall@10: 0.0932 recall@20: 0.1446 ] [ndcg@5: 0.0630 ndcg@10: 0.0747 ndcg@20: 0.0921 ] 
+2025-04-10 12:47:33,210 - Epoch  45 Validation set [recall@5: 0.0569 recall@10: 0.0932 recall@20: 0.1455 ] [ndcg@5: 0.0630 ndcg@10: 0.0750 ndcg@20: 0.0928 ] 
+2025-04-10 12:47:37,167 - [recall@5: 0.0584 recall@10: 0.0941 recall@20: 0.1477 ] [ndcg@5: 0.0645 ndcg@10: 0.0760 ndcg@20: 0.0944 ] 
+2025-04-10 12:47:41,131 - [recall@5: 0.0580 recall@10: 0.0933 recall@20: 0.1472 ] [ndcg@5: 0.0633 ndcg@10: 0.0751 ndcg@20: 0.0935 ] 
+2025-04-10 12:47:41,140 - Save model parameters to ./encoder/checkpoint/dccf_plus/dccf_plus-steam-2023.pth
+2025-04-10 12:47:41,141 - Best Epoch 30. Final test result: {'recall': array([0.05796715, 0.09325721, 0.14720383]), 'ndcg': array([0.06328838, 0.07513433, 0.09354002])}.
+原版
