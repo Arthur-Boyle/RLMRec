@@ -27,22 +27,35 @@ class LightGCN(BaseModel):
     def _propagate(self, adj, embeds):
         return t.spmm(adj, embeds)
     
-    def forward(self, adj=None, keep_rate=1.0):
+    def forward(self, adj=None, keep_rate=1.0, return_all_layers=False):
         if adj is None:
             adj = self.adj
+
         if not self.is_training and self.final_embeds is not None:
+            if return_all_layers:
+                raise RuntimeError("Cached final_embeds does not support layer-wise output")
             return self.final_embeds[:self.user_num], self.final_embeds[self.user_num:]
-        embeds = t.concat([self.user_embeds, self.item_embeds], axis=0)
-        embeds_list = [embeds]
+
+        embeds = t.concat([self.user_embeds, self.item_embeds], dim=0)
+        embeds_list = [embeds]  # layer 0
+
         if self.is_training:
             adj = self.edge_dropper(adj, keep_rate)
-        for i in range(self.layer_num):
+
+        for _ in range(self.layer_num):
             embeds = self._propagate(adj, embeds_list[-1])
             embeds_list.append(embeds)
-        embeds = sum(embeds_list)
-        self.final_embeds = embeds
-        return embeds[:self.user_num], embeds[self.user_num:]
-    
+
+    # LightGCN: sum of all layers
+        final_embeds = sum(embeds_list)
+        self.final_embeds = final_embeds
+
+        if return_all_layers:
+            # 返回每一层（user/item 未切分）
+            return embeds_list
+
+        return final_embeds[:self.user_num], final_embeds[self.user_num:]
+
     def cal_loss(self, batch_data):
         self.is_training = True
         user_embeds, item_embeds = self.forward(self.adj, self.keep_rate)

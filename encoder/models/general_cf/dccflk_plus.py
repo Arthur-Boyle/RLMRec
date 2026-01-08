@@ -12,9 +12,9 @@ from models.loss_utils import cal_bpr_loss, reg_params, cal_infonce_loss
 init = nn.init.xavier_uniform_
 uniformInit = nn.init.uniform
 
-class DCCF_LK(BaseModel):
+class DCCFLK_PLUS(BaseModel):
     def __init__(self, data_handler):
-        super(DCCF_LK, self).__init__(data_handler)
+        super(DCCFLK_PLUS, self).__init__(data_handler)
 
         # 使用LightGCN中的邻接矩阵
         self.adj = data_handler.torch_adj
@@ -52,6 +52,8 @@ class DCCF_LK(BaseModel):
         self.reg_weight = self.hyper_config['reg_weight']
         self.cl_weight = self.hyper_config['cl_weight']
         self.temperature = self.hyper_config['temperature']
+        self.kd_weight = self.hyper_config['kd_weight']
+        self.kd_temperature = self.hyper_config['kd_temperature']
 
         # model parameters
         self.user_embeds = nn.Embedding(self.user_num, self.embedding_size)
@@ -62,6 +64,15 @@ class DCCF_LK(BaseModel):
         # train/test
         self.is_training = True
         self.final_embeds = False
+
+        # side information
+        self.usrprf_embeds = torch.tensor(configs['usrprf_embeds']).float().cuda()
+        self.itmprf_embeds = torch.tensor(configs['itmprf_embeds']).float().cuda()
+        self.mlp = nn.Sequential(
+            nn.Linear(self.usrprf_embeds.shape[1], (self.usrprf_embeds.shape[1] + self.embedding_size) // 2),
+            nn.LeakyReLU(),
+            nn.Linear((self.usrprf_embeds.shape[1] + self.embedding_size) // 2, self.embedding_size)
+        )
 
         self._init_weight()
 
@@ -143,6 +154,13 @@ class DCCF_LK(BaseModel):
         user_embeds, item_embeds = torch.split(all_embeds, [self.user_num, self.item_num], 0)
         self.final_embeds = all_embeds
         return user_embeds, item_embeds, gnn_embeds, int_embeds, gaa_embeds, iaa_embeds
+    
+    def _pick_embeds(self, user_embeds, item_embeds, batch_data):
+        ancs, poss, negs = batch_data
+        anc_embeds = user_embeds[ancs]
+        pos_embeds = item_embeds[poss]
+        neg_embeds = item_embeds[negs]
+        return anc_embeds, pos_embeds, neg_embeds
 
     def _cal_cl_loss(self, users, items, gnn_emb, int_emb, gaa_emb, iaa_emb):
         users = torch.unique(users)
@@ -188,16 +206,20 @@ class DCCF_LK(BaseModel):
         proto_nce_loss = self.ProtoNCE_loss(cecenter_embedding, 
                                             ancs,  # 假定batch_data中包含用户下标
                                             poss)  # 以及物品下标，根据实际情况调整
-        loss = bpr_loss + reg_loss + proto_nce_loss + cl_loss
-        losses = {'bpr_loss': bpr_loss, 'reg_loss': reg_loss, 'cl_loss': cl_loss ,'proto_nce_loss': proto_nce_loss}
+        # 知识蒸馏损失
+        usrprf_embeds = self.mlp(self.usrprf_embeds)
+        itmprf_embeds = self.mlp(self.itmprf_embeds)
+        ancprf_embeds, posprf_embeds, negprf_embeds = self._pick_embeds(usrprf_embeds, itmprf_embeds, batch_data)
+        kd_loss = cal_infonce_loss(anc_embeds, ancprf_embeds, usrprf_embeds, self.kd_temperature) + \
+                  cal_infonce_loss(pos_embeds, posprf_embeds, posprf_embeds, self.kd_temperature) + \
+                  cal_infonce_loss(neg_embeds, negprf_embeds, negprf_embeds, self.kd_temperature)
+        kd_loss /= anc_embeds.shape[0]
+        kd_loss *= self.kd_weight
 
-        #去掉cl损失
-        #loss = bpr_loss + reg_loss + proto_nce_loss 
-        #losses = {'bpr_loss': bpr_loss, 'reg_loss': reg_loss}
 
-        #去掉用户身份物品属性视角
-        #loss = bpr_loss + reg_loss + cl_loss
-        #losses = {'bpr_loss': bpr_loss, 'reg_loss': reg_loss, 'cl_loss': cl_loss}
+        loss = bpr_loss + reg_loss + proto_nce_loss + cl_loss + kd_loss
+        losses = {'bpr_loss': bpr_loss, 'reg_loss': reg_loss, 'cl_loss': cl_loss, 'proto_nce_loss': proto_nce_loss, 'kd_loss': kd_loss}
+
         return loss, losses
 
     def _adaptive_mask(self, head_embeddings, tail_embeddings):

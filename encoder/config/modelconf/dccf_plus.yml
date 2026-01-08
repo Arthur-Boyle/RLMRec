@@ -6,7 +6,7 @@ optimizer:
 train:
   epoch: 3000
   batch_size: 4096
-  save_model: true
+  save_model: false
   loss: pairwise
   test_step: 3
   reproducible: true
