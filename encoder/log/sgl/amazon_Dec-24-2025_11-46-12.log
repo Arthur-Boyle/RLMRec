@@ -1,0 +1,23 @@
+2025-12-24 11:46:12,723 - {'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': False, 'loss': 'pairwise', 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'amazon', 'user_num': 11000, 'item_num': 9332}, 'model': {'name': 'sgl', 'keep_rate': 0.8, 'embedding_size': 32, 'augmentation': 'edge_drop', 'layer_num': 4, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.2, 'amazon': {'layer_num': 4, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.2}, 'yelp': {'layer_num': 3, 'reg_weight': 1e-06, 'cl_weight': 0.001, 'temperature': 0.1}, 'steam': {'layer_num': 2, 'reg_weight': 1e-05, 'cl_weight': 0.1, 'temperature': 0.5}}}
+2025-12-24 11:46:31,461 - Epoch   0 Validation set [recall@5: 0.0036 recall@10: 0.0070 recall@20: 0.0124 ] [ndcg@5: 0.0041 ndcg@10: 0.0053 ndcg@20: 0.0070 ] 
+2025-12-24 11:47:23,001 - Epoch   3 Validation set [recall@5: 0.0198 recall@10: 0.0308 recall@20: 0.0460 ] [ndcg@5: 0.0188 ndcg@10: 0.0227 ndcg@20: 0.0276 ] 
+2025-12-24 11:48:16,765 - Epoch   6 Validation set [recall@5: 0.0188 recall@10: 0.0331 recall@20: 0.0533 ] [ndcg@5: 0.0192 ndcg@10: 0.0245 ndcg@20: 0.0310 ] 
+2025-12-24 11:48:55,027 - Epoch   9 Validation set [recall@5: 0.0213 recall@10: 0.0376 recall@20: 0.0624 ] [ndcg@5: 0.0224 ndcg@10: 0.0280 ndcg@20: 0.0361 ] 
+2025-12-24 11:49:30,620 - Epoch  12 Validation set [recall@5: 0.0412 recall@10: 0.0653 recall@20: 0.1014 ] [ndcg@5: 0.0418 ndcg@10: 0.0502 ndcg@20: 0.0620 ] 
+2025-12-24 11:50:06,818 - Epoch  15 Validation set [recall@5: 0.0566 recall@10: 0.0858 recall@20: 0.1320 ] [ndcg@5: 0.0556 ndcg@10: 0.0657 ndcg@20: 0.0807 ] 
+2025-12-24 11:50:43,930 - Epoch  18 Validation set [recall@5: 0.0610 recall@10: 0.0942 recall@20: 0.1427 ] [ndcg@5: 0.0603 ndcg@10: 0.0721 ndcg@20: 0.0880 ] 
+2025-12-24 11:51:22,016 - Epoch  21 Validation set [recall@5: 0.0641 recall@10: 0.0983 recall@20: 0.1480 ] [ndcg@5: 0.0629 ndcg@10: 0.0749 ndcg@20: 0.0913 ] 
+2025-12-24 11:51:58,247 - Epoch  24 Validation set [recall@5: 0.0647 recall@10: 0.1008 recall@20: 0.1517 ] [ndcg@5: 0.0638 ndcg@10: 0.0765 ndcg@20: 0.0933 ] 
+2025-12-24 11:52:36,332 - Epoch  27 Validation set [recall@5: 0.0649 recall@10: 0.1024 recall@20: 0.1527 ] [ndcg@5: 0.0643 ndcg@10: 0.0774 ndcg@20: 0.0939 ] 
+2025-12-24 11:53:12,714 - Epoch  30 Validation set [recall@5: 0.0650 recall@10: 0.1033 recall@20: 0.1539 ] [ndcg@5: 0.0647 ndcg@10: 0.0781 ndcg@20: 0.0947 ] 
+2025-12-24 11:53:47,990 - Epoch  33 Validation set [recall@5: 0.0657 recall@10: 0.1032 recall@20: 0.1549 ] [ndcg@5: 0.0653 ndcg@10: 0.0783 ndcg@20: 0.0951 ] 
+2025-12-24 11:54:22,041 - Epoch  36 Validation set [recall@5: 0.0651 recall@10: 0.1034 recall@20: 0.1551 ] [ndcg@5: 0.0649 ndcg@10: 0.0782 ndcg@20: 0.0950 ] 
+2025-12-24 11:54:55,507 - Epoch  39 Validation set [recall@5: 0.0658 recall@10: 0.1028 recall@20: 0.1540 ] [ndcg@5: 0.0653 ndcg@10: 0.0779 ndcg@20: 0.0946 ] 
+2025-12-24 11:55:28,804 - Epoch  42 Validation set [recall@5: 0.0652 recall@10: 0.1029 recall@20: 0.1541 ] [ndcg@5: 0.0649 ndcg@10: 0.0778 ndcg@20: 0.0946 ] 
+2025-12-24 11:56:02,545 - Epoch  45 Validation set [recall@5: 0.0651 recall@10: 0.1032 recall@20: 0.1541 ] [ndcg@5: 0.0648 ndcg@10: 0.0779 ndcg@20: 0.0945 ] 
+2025-12-24 11:56:36,021 - Epoch  48 Validation set [recall@5: 0.0647 recall@10: 0.1028 recall@20: 0.1535 ] [ndcg@5: 0.0644 ndcg@10: 0.0774 ndcg@20: 0.0941 ] 
+2025-12-24 11:57:08,975 - Epoch  51 Validation set [recall@5: 0.0648 recall@10: 0.1033 recall@20: 0.1531 ] [ndcg@5: 0.0643 ndcg@10: 0.0776 ndcg@20: 0.0940 ] 
+2025-12-24 11:57:10,246 - [recall@5: 0.0651 recall@10: 0.1034 recall@20: 0.1551 ] [ndcg@5: 0.0649 ndcg@10: 0.0782 ndcg@20: 0.0950 ] 
+2025-12-24 11:57:11,491 - [recall@5: 0.0651 recall@10: 0.1004 recall@20: 0.1497 ] [ndcg@5: 0.0653 ndcg@10: 0.0775 ndcg@20: 0.0936 ] 
+2025-12-24 11:57:11,491 - Best Epoch 36. Final test result: {'recall': array([0.06514822, 0.10038011, 0.14966408]), 'ndcg': array([0.06532578, 0.07748573, 0.09363847])}.
+'layer_num': 4
