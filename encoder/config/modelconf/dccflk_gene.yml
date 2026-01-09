@@ -43,7 +43,7 @@ model:
     cl_weight: 1.0e-3
     temperature: 0.15
     proto_reg: 8e-8                 # (float) The prototype-contrastive weight.
-    num_clusters: 300              # (int) Number of prototypes.
+    num_clusters: 50              # (int) Number of prototypes.
     m_step: 1                       # (int) Number of M-steps for each E-step.
     warm_up_step: 20                # (int) Number of warm up steps.
     ssl_temp: 0.1                   # (float) Temperature for contrastive loss.
@@ -64,7 +64,7 @@ model:
     warm_up_step: 20                # (int) Number of warm up steps.
     ssl_temp: 0.1                   # (float) Temperature for contrastive loss.
     ssl_reg: 1e-7                   # (float) The structure-contrastive loss weight.
-    embedding_size: 64
+    embedding_size: 32
     mask_ratio: 5.0e-2
     recon_weight: 1.0e-2
     re_temperature: 0.1
@@ -80,7 +80,7 @@ model:
     warm_up_step: 20                # (int) Number of warm up steps.
     ssl_temp: 0.1                   # (float) Temperature for contrastive loss.
     ssl_reg: 1e-7                   # (float) The structure-contrastive loss weight.
-    embedding_size: 64
+    embedding_size: 32
     mask_ratio: 1.0e-1
     recon_weight: 1.0e-2
     re_temperature: 0.2

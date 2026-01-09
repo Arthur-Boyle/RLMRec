@@ -1,0 +1,22 @@
+2026-01-08 12:33:41,828 - {'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'log_loss': False, 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5, 'trainer': 'autocf_trainer'}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'amazon', 'user_num': 11000, 'item_num': 9332}, 'model': {'name': 'autocf_plus', 'embedding_size': 32, 'keep_rate': 0.2, 'gt_layer': 1, 'head_num': 4, 'seed_num': 100, 'mask_depth': 2, 'fix_steps': 10, 'gcn_layer': 2, 'reg_weight': 1e-06, 'ssl_reg': 1, 'kd_weight': 0.01, 'kd_temperature': 0.5, 'amazon': {'gcn_layer': 2, 'reg_weight': 1e-06, 'ssl_reg': 1, 'kd_weight': 0.1, 'kd_temperature': 0.5}, 'yelp': {'gcn_layer': 2, 'reg_weight': 1e-08, 'ssl_reg': 1, 'kd_weight': 0.01, 'kd_temperature': 0.1}, 'steam': {'gcn_layer': 2, 'reg_weight': 1e-06, 'ssl_reg': 0.5, 'kd_weight': 0.01, 'kd_temperature': 0.2}}}
+2026-01-08 12:33:48,698 - Epoch   0 Validation set [recall@5: 0.0235 recall@10: 0.0404 recall@20: 0.0659 ] [ndcg@5: 0.0237 ndcg@10: 0.0299 ndcg@20: 0.0382 ] 
+2026-01-08 12:34:01,903 - Epoch   3 Validation set [recall@5: 0.0221 recall@10: 0.0361 recall@20: 0.0610 ] [ndcg@5: 0.0223 ndcg@10: 0.0270 ndcg@20: 0.0352 ] 
+2026-01-08 12:34:15,046 - Epoch   6 Validation set [recall@5: 0.0370 recall@10: 0.0612 recall@20: 0.0976 ] [ndcg@5: 0.0373 ndcg@10: 0.0456 ndcg@20: 0.0575 ] 
+2026-01-08 12:34:32,197 - Epoch   9 Validation set [recall@5: 0.0480 recall@10: 0.0744 recall@20: 0.1151 ] [ndcg@5: 0.0478 ndcg@10: 0.0566 ndcg@20: 0.0698 ] 
+2026-01-08 12:34:51,589 - Epoch  12 Validation set [recall@5: 0.0546 recall@10: 0.0836 recall@20: 0.1291 ] [ndcg@5: 0.0542 ndcg@10: 0.0637 ndcg@20: 0.0786 ] 
+2026-01-08 12:35:10,261 - Epoch  15 Validation set [recall@5: 0.0594 recall@10: 0.0931 recall@20: 0.1395 ] [ndcg@5: 0.0588 ndcg@10: 0.0702 ndcg@20: 0.0854 ] 
+2026-01-08 12:35:30,098 - Epoch  18 Validation set [recall@5: 0.0631 recall@10: 0.1000 recall@20: 0.1481 ] [ndcg@5: 0.0627 ndcg@10: 0.0754 ndcg@20: 0.0912 ] 
+2026-01-08 12:35:49,723 - Epoch  21 Validation set [recall@5: 0.0679 recall@10: 0.1051 recall@20: 0.1544 ] [ndcg@5: 0.0674 ndcg@10: 0.0800 ndcg@20: 0.0959 ] 
+2026-01-08 12:36:09,036 - Epoch  24 Validation set [recall@5: 0.0724 recall@10: 0.1080 recall@20: 0.1585 ] [ndcg@5: 0.0705 ndcg@10: 0.0825 ndcg@20: 0.0991 ] 
+2026-01-08 12:36:26,802 - Epoch  27 Validation set [recall@5: 0.0750 recall@10: 0.1111 recall@20: 0.1623 ] [ndcg@5: 0.0731 ndcg@10: 0.0851 ndcg@20: 0.1018 ] 
+2026-01-08 12:36:43,855 - Epoch  30 Validation set [recall@5: 0.0750 recall@10: 0.1131 recall@20: 0.1635 ] [ndcg@5: 0.0746 ndcg@10: 0.0872 ndcg@20: 0.1036 ] 
+2026-01-08 12:37:02,675 - Epoch  33 Validation set [recall@5: 0.0753 recall@10: 0.1133 recall@20: 0.1639 ] [ndcg@5: 0.0746 ndcg@10: 0.0873 ndcg@20: 0.1039 ] 
+2026-01-08 12:37:20,289 - Epoch  36 Validation set [recall@5: 0.0747 recall@10: 0.1145 recall@20: 0.1629 ] [ndcg@5: 0.0746 ndcg@10: 0.0880 ndcg@20: 0.1039 ] 
+2026-01-08 12:37:38,134 - Epoch  39 Validation set [recall@5: 0.0745 recall@10: 0.1138 recall@20: 0.1624 ] [ndcg@5: 0.0747 ndcg@10: 0.0879 ndcg@20: 0.1038 ] 
+2026-01-08 12:37:58,085 - Epoch  42 Validation set [recall@5: 0.0743 recall@10: 0.1129 recall@20: 0.1621 ] [ndcg@5: 0.0741 ndcg@10: 0.0872 ndcg@20: 0.1031 ] 
+2026-01-08 12:38:15,916 - Epoch  45 Validation set [recall@5: 0.0750 recall@10: 0.1134 recall@20: 0.1613 ] [ndcg@5: 0.0743 ndcg@10: 0.0873 ndcg@20: 0.1029 ] 
+2026-01-08 12:38:34,431 - Epoch  48 Validation set [recall@5: 0.0749 recall@10: 0.1121 recall@20: 0.1606 ] [ndcg@5: 0.0742 ndcg@10: 0.0867 ndcg@20: 0.1025 ] 
+2026-01-08 12:38:37,913 - [recall@5: 0.0753 recall@10: 0.1133 recall@20: 0.1639 ] [ndcg@5: 0.0746 ndcg@10: 0.0873 ndcg@20: 0.1039 ] 
+2026-01-08 12:38:41,312 - [recall@5: 0.0692 recall@10: 0.1058 recall@20: 0.1586 ] [ndcg@5: 0.0699 ndcg@10: 0.0824 ndcg@20: 0.0996 ] 
+2026-01-08 12:38:41,399 - Save model parameters to ./encoder/checkpoint/autocf_plus/autocf_plus-amazon-2023.pth
+2026-01-08 12:38:41,400 - Best Epoch 33. Final test result: {'recall': array([0.06917239, 0.10577115, 0.15857785]), 'ndcg': array([0.06990909, 0.08238028, 0.0995893 ])}.
