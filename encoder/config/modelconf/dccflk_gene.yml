@@ -64,7 +64,7 @@ model:
     warm_up_step: 20                # (int) Number of warm up steps.
     ssl_temp: 0.1                   # (float) Temperature for contrastive loss.
     ssl_reg: 1e-7                   # (float) The structure-contrastive loss weight.
-    embedding_size: 32
+    embedding_size: 64
     mask_ratio: 5.0e-2
     recon_weight: 1.0e-2
     re_temperature: 0.1
@@ -80,7 +80,7 @@ model:
     warm_up_step: 20                # (int) Number of warm up steps.
     ssl_temp: 0.1                   # (float) Temperature for contrastive loss.
     ssl_reg: 1e-7                   # (float) The structure-contrastive loss weight.
-    embedding_size: 32
+    embedding_size: 64
     mask_ratio: 1.0e-1
     recon_weight: 1.0e-2
     re_temperature: 0.2
