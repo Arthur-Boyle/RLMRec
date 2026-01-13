@@ -1,0 +1,157 @@
+# Case Study Result
+# Dataset: amazon
+# Target user: u1999
+# Base model: dccf_lk
+# Compare model: dccflk_gene
+# Long-distance users (>3 hops): 115
+
+--- Case 1: u1999 vs u3833 ---
+Base rank (dccf_lk): 91
+Rank (dccflk_gene): 4
+Delta rank: +87
+Base sim: 0.0302
+dccflk_gene sim: 0.0991
+
+[User Profile]
+The user is likely to enjoy paranormal romance and cozy mysteries, as seen from their purchase of Forever Charmed: The Halloween LaVeau Series, Book 1, which features a likable main character, humor, a bit of romance, and supernatural creatures.
+
+[Reasoning]
+The purchased book has elements of paranormal romance and cozy mystery genres, and from the user's positive review, it is evident that they enjoyed these elements. The likable main character and romantic subplots within the book also suggest that the user may enjoy similar books in these genres.
+
+============================================================
+
+--- Case 2: u1999 vs u3892 ---
+Base rank (dccf_lk): 89
+Rank (dccflk_gene): 7
+Delta rank: +82
+Base sim: 0.0312
+dccflk_gene sim: 0.0855
+
+[User Profile]
+Based on the given information, it seems that the user enjoys reading fast-paced urban fiction novels that depict gritty and realistic portrayals of life on the streets. However, they may prefer books that have been edited for spelling and grammar mistakes.
+
+[Reasoning]
+The user's review of 'That Woman's Husband' highlights their preference for action-packed, urban fiction novels. Furthermore, they appreciate books with complex relationships, family dynamics, and moral dilemmas. However, they also mention their dissatisfaction with the spelling and grammar mistakes in the book which indicates their preference for grammatically correct literature. Since there is no specific information available about 'The S.N. Killer', we cannot provide a detailed analysis of the user's preferences for that book.
+
+============================================================
+
+--- Case 3: u1999 vs u939 ---
+Base rank (dccf_lk): 113
+Rank (dccflk_gene): 35
+Delta rank: +78
+Base sim: -0.0521
+dccflk_gene sim: 0.0306
+
+[User Profile]
+This user enjoys urban fiction with gritty, realistic stories about life in African American communities. They particularly enjoy works by Takerra Allen and Rayven Skyy, which feature themes of overcoming adversity and touching on sensitive subjects such as violence, drugs, and crime. The user appreciates humor as well as emotional depth in the stories they read.
+
+[Reasoning]
+The user has consistently purchased and positively reviewed urban fiction novels with themes of violence, drugs, and crime, particularly those set in African American communities. They appreciate works that tackle important and sensitive subjects, such as Takerra Allen's (There's Power in the) V. Additionally, they have praised works that are both emotional and humorous, such as Rayven Skyy's A Rumble in VA series.
+
+============================================================
+
+--- Case 4: u1999 vs u6302 ---
+Base rank (dccf_lk): 75
+Rank (dccflk_gene): 5
+Delta rank: +70
+Base sim: 0.0623
+dccflk_gene sim: 0.0904
+
+[User Profile]
+The user enjoys gritty urban fiction, specifically books that deal with drugs, violence, and crime. They appreciate stories with complex characters and vividly depicted urban environments. They also have an interest in reading stories told from a woman's perspective.
+
+[Reasoning]
+All three purchased books fall under the category of gritty urban fiction combined with complex characters, and vividly depicted urban environments. All of the user's reviews express an appreciation for the depth and realness of the characters, as well as the harsh realities of inner city life. Additionally, the user enjoyed a storyline from a woman's point of view. Therefore, it can be concluded that the user has a particular interest in these types of books.
+
+============================================================
+
+--- Case 5: u1999 vs u6794 ---
+Base rank (dccf_lk): 68
+Rank (dccflk_gene): 14
+Delta rank: +54
+Base sim: 0.0671
+dccflk_gene sim: 0.0670
+
+[User Profile]
+The user is likely to enjoy gritty, fast-paced stories featuring complex characters and vividly depicted urban environments that explore themes of crime and personal struggles. They appreciate books that provoke a sense of excitement and are character-driven. Both urban and contemporary fiction are genres they are drawn to.
+
+[Reasoning]
+The purchased books tend to fall into the urban and contemporary fiction genres. The user gravitates towards books that contain multi-dimensional characters and complex plots that explore themes of crime, personal struggles, and overcoming adversity. The reviews suggest that the user enjoys books that are fast-paced and character-driven, with exciting and unexpected plot twists. All the reviewed books explore themes such as personal struggle, gang lifestyle, and overcoming life obstacles. Based on these factors, it is likely that the user will enjoy similar books with a similar tone and themes in the future.
+
+============================================================
+
+--- Case 6: u1999 vs u6313 ---
+Base rank (dccf_lk): 76
+Rank (dccflk_gene): 25
+Delta rank: +51
+Base sim: 0.0607
+dccflk_gene sim: 0.0423
+
+[User Profile]
+The user enjoys a variety of genres including erotic fiction, urban lit, and true crime. They appreciate books with a strong plot and well-developed characters. The user also values a good cliffhanger and is not opposed to sequels.
+
+[Reasoning]
+The user's positive reviews of the books they have purchased indicate that they enjoy books with a strong plot and well-developed characters. The genres of these books are diverse, but the books share these common characteristics. The user also mentions enjoying cliffhanger endings and anticipating sequels, highlighting their desire for engaging stories that leave an impact.
+
+============================================================
+
+--- Case 7: u1999 vs u6944 ---
+Base rank (dccf_lk): 63
+Rank (dccflk_gene): 17
+Delta rank: +46
+Base sim: 0.0804
+dccflk_gene sim: 0.0591
+
+[User Profile]
+This user is likely to enjoy fantasy and medieval tales with elements of combat, magic, and romance, such as A Tale of Two Kingdoms (Knights of Black Swan) (Volume 6) by Victoria Danann.
+
+[Reasoning]
+Based on the user's review, they enjoyed the mix of genres in the book and were surprised to find that they liked it. The user also specifically mentioned the supernatural and action elements, which are often found in fantasy and medieval tales. Additionally, the mention of knights in shining armor suggests an interest in these types of stories.
+
+============================================================
+
+--- Case 8: u1999 vs u10997 ---
+Base rank (dccf_lk): 107
+Rank (dccflk_gene): 62
+Delta rank: +45
+Base sim: -0.0116
+dccflk_gene sim: -0.0131
+
+[User Profile]
+Based on the books the user has purchased and reviewed, it appears that they enjoy reading gritty and dark urban stories about characters with complex family dynamics and struggles with addiction. They also have an interest in exploring BDSM and alternative lifestyles.
+
+[Reasoning]
+The purchased books 'A Child of a CrackHead III' fits the gritty and dark urban category, while their positive review of the first book of the 'The Pleasure of Pain' series suggests they have an interest in BDSM and alternative lifestyles. Their positive reviews and mention of wanting to read the third installment of the 'A Child of a CrackHead' series indicates a strong interest in this type of reading material.
+
+============================================================
+
+--- Case 9: u1999 vs u9706 ---
+Base rank (dccf_lk): 83
+Rank (dccflk_gene): 43
+Delta rank: +40
+Base sim: 0.0499
+dccflk_gene sim: 0.0093
+
+[User Profile]
+The user enjoys gritty and realistic urban fiction with themes of crime, violence, and redemption. They appreciate narratives that draw from true life experiences and offer an unflinching look into complex family dynamics. The user also enjoys books with strong characters who face significant emotional challenges and who defy the societal odds.
+
+[Reasoning]
+Based on the user's purchased items, the books are centered around a common theme of urban, gritty, and dark stories that offer an unflinching look into the protagonist's life challenges. The user is drawn to narratives that draw from true life experiences, complex family dynamics, crime, and redemption. The reviews also indicate the user enjoys books with strong characters who defy the societal odds and possess significant emotional challenges.
+
+============================================================
+
+--- Case 10: u1999 vs u1686 ---
+Base rank (dccf_lk): 78
+Rank (dccflk_gene): 41
+Delta rank: +37
+Base sim: 0.0592
+dccflk_gene sim: 0.0113
+
+[User Profile]
+The user enjoys books from a diverse range of categories, including crime thriller, action-packed adventure, gritty street life drama, and music industry drama. They seem to appreciate stories with unexpected twists and betrayals and strong, relatable characters.
+
+[Reasoning]
+From the reviews, we can gather that the user has a keen interest in reading books that keep them engaged from start to finish. They enjoy plot twists and betrayals that leave them reeling. Their range of preferred genres suggests that they are open to exploring different reading experiences, as long as the book immerses them in the story. The user also seems to appreciate relatable characters who go through personal growth and come out stronger in the end.
+
+============================================================
+

@@ -1,6 +1,7 @@
 import argparse
 import torch
 import numpy as np
+import os
 
 from config.configurator import configs
 from data_utils.build_data_handler import build_data_handler
@@ -15,15 +16,16 @@ def main():
     parser.add_argument("--device", default="cuda")
     args = parser.parse_args()
 
-    # ⚠️ 这里非常关键：
-    # model / dataset 必须在程序启动时通过 configs 生效
+    # -------- configs（一次性生效）--------
     configs["model"]["name"] = args.model
     configs["data"]["name"] = args.dataset
     configs["device"] = args.device
 
+    # -------- data --------
     data_handler = build_data_handler()
     data_handler.load_data()
 
+    # -------- model --------
     model = build_model(data_handler).to(args.device)
 
     ckpt_path = (
@@ -41,27 +43,15 @@ def main():
     with torch.no_grad():
         _, _, gnn_embeds, *_ = model.forward()
 
+    # Layer-0 user embeddings
     user_emb = gnn_embeds[0][:n_users].cpu().numpy()
 
-    # -------- graph distance --------
-    u = args.target_user
-    user_dist = data_handler.user_graph_dist[u]
-    long_users = np.array(
-        [v for v, d in user_dist.items() if d > 3],
-        dtype=np.int32
-    )
+    # -------- save --------
+    os.makedirs("./encoder/tmp", exist_ok=True)
+    out_path = f"./encoder/tmp/{args.model}_{args.dataset}_u{args.target_user}.npz"
 
-    out_path = (
-        f"./encoder/tmp/"
-        f"{args.model}_{args.dataset}_u{u}.npz"
-    )
-    print("[Save]", out_path)
-
-    np.savez(
-        out_path,
-        user_emb=user_emb,
-        long_users=long_users
-    )
+    np.savez(out_path, user_emb=user_emb)
+    print("[Saved]", out_path)
 
 
 if __name__ == "__main__":

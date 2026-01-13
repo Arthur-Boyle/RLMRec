@@ -1,0 +1,157 @@
+# Case Study Result
+# Dataset: amazon
+# Target user: u1998
+# Base model: dccf_lk
+# Compare model: dccflk_gene
+# Long-distance users (>3 hops): 35
+
+--- Case 1: u1998 vs u1689 ---
+Base rank (dccf_lk): 34
+Rank (dccflk_gene): 5
+Delta rank: +29
+Base sim: -0.2710
+dccflk_gene sim: -0.0618
+
+[User Profile]
+Based on the user's purchases and reviews, it seems they enjoy urban fiction with themes of hip-hop culture and romance. The Rap Star series, in particular, appeals to them as it captures the glamour and drama of the music industry. Kush and Cologne also caught their interest with its captivating love story and surprising plot twists.
+
+[Reasoning]
+The user's positive reviews and continued interest in the Rap Star series suggest a strong affinity for the themes of urban fiction and hip-hop culture portrayed in the book. Their enjoyment of Kush and Cologne, which features a heartwarming romance and an intriguing plot, further supports this conclusion. Therefore, it is likely that the user is drawn to urban fiction with a focus on romance and culture.
+
+============================================================
+
+--- Case 2: u1998 vs u4086 ---
+Base rank (dccf_lk): 31
+Rank (dccflk_gene): 2
+Delta rank: +29
+Base sim: -0.2168
+dccflk_gene sim: -0.0083
+
+[User Profile]
+Based on the user's purchase of Rozalyn by Shantoinette Richardson, it is likely that the user enjoys urban fiction novels that relate to their own experiences. The user gave the book a positive review, indicating they were engaged with the story and characters.
+
+[Reasoning]
+The description of the book highlights its appeal to fans of urban fiction, indicating that Rozalyn fits into that particular genre. The user's positive review supports this conclusion, and the comment that they 'can't wait to read Rozalyn 2' suggests that they are invested in the storyline and characters, which is common for people who enjoy this genre.
+
+============================================================
+
+--- Case 3: u1998 vs u9455 ---
+Base rank (dccf_lk): 22
+Rank (dccflk_gene): 1
+Delta rank: +21
+Base sim: -0.1585
+dccflk_gene sim: -0.0050
+
+[User Profile]
+This user is likely to enjoy sequels with engaging characters and well-written stories. Specifically, they enjoyed Traci Bee's sequel 'Another Tear', and may enjoy similar works in the future.
+
+[Reasoning]
+The user has purchased and reviewed Traci Bee's sequel 'Another Tear' positively, mentioning their enjoyment of the characters and anticipation for future drama. This suggests that they may be drawn to similar works with engaging characters and well-written stories.
+
+============================================================
+
+--- Case 4: u1998 vs u936 ---
+Base rank (dccf_lk): 19
+Rank (dccflk_gene): 3
+Delta rank: +16
+Base sim: -0.1325
+dccflk_gene sim: -0.0336
+
+[User Profile]
+Based on the user's purchased items and reviews, it seems that they enjoy urban romance novels with strong female leads facing challenging relationships.
+
+[Reasoning]
+Both purchased books fall under the genre of urban romance, featuring female leads who navigate complicated relationships. The user's positive reviews and emphasis on strong female characters suggest that they enjoy this type of story. The use of phrases such as 'heart was in the right place' and 'she thought they had the kind of love that would last forever' indicate an interest in themes such as love, trust, and loyalty.
+
+============================================================
+
+--- Case 5: u1998 vs u6303 ---
+Base rank (dccf_lk): 24
+Rank (dccflk_gene): 8
+Delta rank: +16
+Base sim: -0.1906
+dccflk_gene sim: -0.0797
+
+[User Profile]
+The user is likely to enjoy books that explore complex family relationships and interpersonal conflicts, with themes of perseverance and personal growth. Urban fiction may also be of interest.
+
+[Reasoning]
+Based on the user's positive review of 'A Daughters Rage (Volume 1)' by Roni J., which focuses on the aforementioned themes and genre.
+
+============================================================
+
+--- Case 6: u1998 vs u4087 ---
+Base rank (dccf_lk): 23
+Rank (dccflk_gene): 11
+Delta rank: +12
+Base sim: -0.1606
+dccflk_gene sim: -0.0952
+
+[User Profile]
+Based on the user's purchase and review of Fist Full Of Tears (Volume 1) by Fanita Pendleton, it seems likely that the user enjoys urban crime and romance dramas. The user may also be interested in books related to the criminal justice system.
+
+[Reasoning]
+The user's review expresses enthusiasm for the book, particularly the characters Fist and Yatta. The book is described as an urban crime and romance drama, and the description suggests that fans of Donald Goines or Iceberg Slim would enjoy it. Additionally, the description notes that those interested in the criminal justice system or teaching in criminal justice may also find the book intriguing.
+
+============================================================
+
+--- Case 7: u1998 vs u5350 ---
+Base rank (dccf_lk): 21
+Rank (dccflk_gene): 10
+Delta rank: +11
+Base sim: -0.1578
+dccflk_gene sim: -0.0873
+
+[User Profile]
+Based on the user's purchase history and reviews, it is likely that they enjoy reading fiction and crime/suspense novels with a thrilling twist. The user also seemed to have an interest in exploring alternative lifestyles, as seen in the purchase of 'The Pleasure of Pain' series.
+
+[Reasoning]
+The user's purchase of 'Truth Hurts, Lies Kill' suggests an interest in crime and suspense fiction. Additionally, the user's interest in the BDSM genre is evident in the purchase and recommendation of 'The Pleasure of Pain 2'. The user did not provide enough information regarding 'Hard', but their review suggests they may enjoy books with a more coherent storyline. Overall, the user's preferred genres appear to be fiction and crime/suspense novels with unique or thrilling twists.
+
+============================================================
+
+--- Case 8: u1998 vs u1516 ---
+Base rank (dccf_lk): 13
+Rank (dccflk_gene): 4
+Delta rank: +9
+Base sim: -0.1108
+dccflk_gene sim: -0.0448
+
+[User Profile]
+The user enjoys reading urban fiction novels featuring strong, relatable characters with complex personalities, including women who are willing to take risks in order to get what they want.
+
+[Reasoning]
+Based on the user's reviews of 'Deja' and 'Another Tear', it is clear that he or she enjoys reading well-written urban fiction novels with interesting characters and engaging plots. The user seems to appreciate novels with strong female characters who face tough challenges and are willing to take risks in order to achieve their goals. Additionally, the user seems to enjoy novels with fast-paced plots that keep the reader engaged throughout the entire book. Overall, the user is likely to be drawn to urban fiction novels with relatable characters and complex relationships.
+
+============================================================
+
+--- Case 9: u1998 vs u2887 ---
+Base rank (dccf_lk): 28
+Rank (dccflk_gene): 19
+Delta rank: +9
+Base sim: -0.2015
+dccflk_gene sim: -0.1560
+
+[User Profile]
+Based on the user's purchased items and their reviews, this user is likely to enjoy urban fiction and gritty, dark stories that explore complex family dynamics and struggles with addiction. Additionally, they may enjoy modern romance novels that take place in urban settings with young adult characters.
+
+[Reasoning]
+The user seems to enjoy books that provide them with a window into the experiences of urban communities, particularly those that explore complex family dynamics. Their reading preferences suggest an interest in gritty stories that tackle tough subjects like addiction and abuse. Further, their enjoyment of the romance novel Uptown Princess suggests that they may also appreciate stories that focus on youthful characters navigating their way through an urban environment.
+
+============================================================
+
+--- Case 10: u1998 vs u6146 ---
+Base rank (dccf_lk): 30
+Rank (dccflk_gene): 23
+Delta rank: +7
+Base sim: -0.2109
+dccflk_gene sim: -0.1699
+
+[User Profile]
+Based on the books that the user has purchased and their reviews, it seems like they enjoy gritty urban fiction with themes of crime and romance. They seem to prefer books with violence, foul language, and sex scenes along with unexpected plot twists, action, and suspense. The user may also appreciate books with strong and relatable characters struggling to navigate through various obstacles of life.
+
+[Reasoning]
+The user has purchased books like Trust No Bitch 2 and 3, Gangsta Luv 2, and Fist Full of Tears which are all categorized as urban fiction with mature themes that revolve around romance, crime, and street life. Furthermore, the user has also given positive reviews mentioning the books' unexpected plot twists, action, and suspense, and the authors' writing style. The tone of their reviews suggests a preference for books with gritty and realistic character portrayals and a story setting that reflects urban culture and lifestyle.
+
+============================================================
+
